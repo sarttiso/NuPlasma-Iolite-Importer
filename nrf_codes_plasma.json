@@ -1,0 +1,15 @@
+{
+  "nrfs": [
+    {
+      "name": "Pb_Th_U_Laser(sample-std-brckt)_noAx.nrf",
+      "masses": [
+        "U238",
+        "Th232",
+        "Pb208",
+        "Pb207",
+        "Pb206",
+        "Pb204"
+      ]
+    }
+  ]
+}
