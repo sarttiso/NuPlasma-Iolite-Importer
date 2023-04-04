@@ -1,4 +1,4 @@
-# Nu Plasma3 Iolite Import Plugin
+# Nu Plasma Iolite Import Plugin
 
 **UCSB LASS Petrochronology**
 
@@ -16,14 +16,14 @@ appropriately, the plugin will work.
 
 ## Installation
 Use the `Tools -> Plugins -> Import` menu at the top of Iolite4 to install the
-[nu-plasma3_importer.py](nu-plasma3_importer.py) file. Click `Import Always` for the plugin to be available in future sessions of Iolite4.
+[nu-plasma_importer.py](nu-plasma_importer.py) file. Click `Import Always` for the plugin to be available in future sessions of Iolite4.
 
 After installing the plugin, you might need to click `Tools -> Plugins -> Refresh` or
 restart Iolite4.
 
 Once the plugin is installed, go to `Tools -> Plugins -> Manage`. Scroll down to
-NuPlasma3. By `Path`, click the `Show` button to open the plugin installation folder.
-Copy [nrf_codes.json](nrf_codes.json) (or your version of this file) into this folder.
+NuPlasma. By `Path`, click the `Show` button to open the plugin installation folder.
+Copy [nrf_codes_plasma.json](nrf_codes_plasma.json) (or your version of this file) into this folder.
 
 ## Notes
 ### Timestamps and Time Zones
@@ -31,6 +31,3 @@ This plugin, being geared towards UCSB users, assumes that the Nu Plasma3 timest
 in Pacific time. If that is not the case, you will want to change the time zone
 specification To accomplish this, search for `pytz.timezone` in the plugin code and change the argument to match
 your time zone. 
-
-## To Do
-- [ ] implement `correct_format()` to verify that `.csv` files are properly formatted
