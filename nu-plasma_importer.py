@@ -3,7 +3,7 @@
 #/ Authors: Adrian Tasistro-Hart
 #/ Description: An importer for loading Nu Plasma .run files from a Plasma.
 #/ References: None
-#/ Version: 0.1
+#/ Version: 0.2
 #/ Contact: adrian at tasistro-hart.com
 
 import time
@@ -45,8 +45,12 @@ def correct_format():
 
     This method must return either True or False.
     """
+    _, ext = os.path.splitext(importer.fileName)
 
-    return True
+    if ext == '.run':
+        return True
+    else: 
+        return False
 
 def import_data():
     """
