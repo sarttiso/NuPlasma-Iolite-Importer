@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.1 (2024-02-16)
+
+- half masses permissible
+
 ## 0.2 (2023-07-31)
 
 - rudimentary implementation of `correct_format()`

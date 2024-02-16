@@ -3,7 +3,7 @@
 #/ Authors: Adrian Tasistro-Hart
 #/ Description: An importer for loading Nu Plasma .run files from a Plasma.
 #/ References: None
-#/ Version: 0.2
+#/ Version: 0.2.1
 #/ Contact: adrian at tasistro-hart.com
 
 import time
@@ -103,12 +103,13 @@ def import_data():
     # set time vector as index for dataframe (not actually necessary but oh well)
     run.set_index(time_vec, inplace=True)
 
-    for ii in range(len(datacols)):
-        cur_props = {'Units': 'Volts',
-                     'Mass': masses[ii], 
-                     'Element': elements[ii]}
-        # careful with timezones!
-        data.addDataToInput(datacols[ii], time_vec_unix_epoch, run[datacols[ii]].values, cur_props)
+    # add channels to iolite
+    for ii, mass in enumerate(masses):
+        channel = data.createTimeSeries(
+            datacols[ii], data.Input, time_vec_unix_epoch, run[datacols[ii]].values
+        )
+        channel.setProperty("Mass", mass)
+        channel.setProperty("Units", "volts")
 
     # Now calculate Total Beam:
     data.calculateTotalBeam()
@@ -151,7 +152,8 @@ def match_nrf(nrf_name):
 
     # having found a match, prepare arrays for masses, elements, and data columns
     nrf = nrfs[np.argwhere(idx).squeeze()]
-    masses  = [int(re.findall(r'\d+', x)[0]) for x in nrf['masses']]
+    masses  = [re.search(r'\d+(\.\d+)?', x).group(0)
+              for x in nrf['masses']]
     elements = [re.findall('[a-zA-Z]+', x)[0] for x in nrf['masses']]
     datacols = [str(masses[ii])+elements[ii] for ii in range(len(masses))]
 
