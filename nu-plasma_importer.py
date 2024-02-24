@@ -3,7 +3,7 @@
 #/ Authors: Adrian Tasistro-Hart
 #/ Description: An importer for loading Nu Plasma .run files from a Plasma.
 #/ References: None
-#/ Version: 0.2.1
+#/ Version: 0.2.2
 #/ Contact: adrian at tasistro-hart.com
 
 import time
@@ -110,6 +110,7 @@ def import_data():
         )
         channel.setProperty("Mass", mass)
         channel.setProperty("Units", "volts")
+        channel.setProperty("Machine Name", 'Nu Plasma')
 
     # Now calculate Total Beam:
     data.calculateTotalBeam()

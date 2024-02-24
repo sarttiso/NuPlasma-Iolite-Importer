@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.2.2 
+- added "Machine Name" property to channels, fixes issue with datasyncer 
+
 ## 0.2.1 (2024-02-16)
 
 - half masses permissible
