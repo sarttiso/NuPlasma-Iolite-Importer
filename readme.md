@@ -18,8 +18,7 @@ appropriately, the plugin will work.
 Use the `Tools -> Plugins -> Import` menu at the top of Iolite4 to install the
 [nu-plasma_importer.py](nu-plasma_importer.py) file. Click `Import Always` for the plugin to be available in future sessions of Iolite4.
 
-After installing the plugin, you might need to click `Tools -> Plugins -> Refresh` or
-restart Iolite4.
+After installing the plugin, you will need to restart Iolite4.
 
 Once the plugin is installed, go to `Tools -> Plugins -> Manage`. Scroll down to
 NuPlasma. By `Path`, click the `Show` button to open the plugin installation folder.
@@ -27,7 +26,7 @@ Copy [nrf_codes_plasma.json](nrf_codes_plasma.json) (or your version of this fil
 
 ## Notes
 ### Timestamps and Time Zones
-This plugin, being geared towards UCSB users, assumes that the Nu Plasma3 timestamps are
+This plugin, being geared towards UCSB users, assumes that the Nu Plasma timestamps are
 in Pacific time. If that is not the case, you will want to change the time zone
 specification To accomplish this, search for `pytz.timezone` in the plugin code and change the argument to match
 your time zone. 
